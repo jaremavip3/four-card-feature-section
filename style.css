@@ -14,6 +14,7 @@
   --clr--primary--blue: hsl(212, 86%, 64%);
 
   --clr--neutral--dark--blue: hsl(234, 12%, 34%);
+  --clr--hls-neutral--dark--blue: 234, 12%, 34%;
   --clr--neutral--grayish--blue: hsl(229, 6%, 66%);
   --clr--neutral--light--grayish--blue: hsl(0, 0%, 98%);
 }
@@ -84,4 +85,58 @@ html,
 body {
   min-height: 100dvh;
   font-family: var(--ff-basic);
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 10dvw;
+}
+.section__text {
+  max-width: 30rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.section__text__subtitle {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-light);
+}
+.section__text__title {
+  font-size: var(--fs-title);
+  font-weight: var(--fw-bold);
+}
+.section__text__paragraph {
+  font-size: var(--fs-basic);
+  color: var(--clr--neutral--grayish--blue);
+}
+
+.section__cards {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  justify-items: center;
+}
+.flex-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  box-shadow: 0.5rem 1rem 3rem hsl(var(--clr--hls-neutral--dark--blue), 0.2);
+  border-radius: 0.3rem 0.3rem 0.8rem 0.8rem;
+}
+img {
+  align-self: flex-end;
+}
+.card__one {
+  border-top: var(--clr--primary--cyan) 4px solid;
 }
