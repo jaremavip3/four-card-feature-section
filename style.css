@@ -1,5 +1,6 @@
 :root {
   --fs-basic: 0.938rem;
+  --fs-mobile-title: 1.5rem;
   --fs-title: 2rem;
   --fs-main-title: 2.5rem;
 
@@ -91,7 +92,11 @@ body {
   flex-direction: column;
   align-items: center;
   margin-inline: 10dvw;
+  gap: 3rem;
+  margin-top: 7dvh;
+  margin-bottom: 7dvh;
 }
+
 .section__text {
   max-width: 30rem;
   text-align: center;
@@ -114,29 +119,57 @@ body {
 
 .section__cards {
   display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
-  justify-items: center;
+  grid-auto-columns: 1fr;
 }
+@media (min-width: 700px) {
+  .section__cards {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, minmax(10rem, 1fr));
+    justify-items: center;
+  }
+  .flex-box .section__text__subtitle {
+    font-size: var(--fs-mobile-title);
+  }
+  .section__text__title {
+    font-size: var(--fs-mobile-title);
+  }
+}
+
 .flex-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
+  min-width: 8rem;
 }
 .card {
   display: flex;
   flex-direction: column;
+
   align-items: start;
   gap: 0.8rem;
   padding: 1.5rem;
   box-shadow: 0.5rem 1rem 3rem hsl(var(--clr--hls-neutral--dark--blue), 0.2);
   border-radius: 0.3rem 0.3rem 0.8rem 0.8rem;
 }
+.card__desc {
+  color: var(--clr--neutral--grayish--blue);
+  width: 100%;
+}
 img {
   align-self: flex-end;
 }
 .card__one {
+  align-self: stretch;
   border-top: var(--clr--primary--cyan) 4px solid;
+}
+.card__two {
+  border-top: var(--clr--primary--red) 4px solid;
+}
+.card__three {
+  border-top: var(--clr--primary--orange) 4px solid;
+}
+.card__four {
+  border-top: var(--clr--primary--blue) 4px solid;
 }
